@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- link fo Fonts of CSS from https://fontawesome.com  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!-- file of CSS-->
+    <link rel="stylesheet" href="arrays.css">
+    <title>JAMES VERGARA RINCON | CIT 261</title>
+
+    <script>
+        /*  Input
+         *      to define an array previously
+         *  Processing: 
+         *      Process that returns the sum of the first and last values in an array 
+         *  Output: 
+         *      Displays the result to the user
+         */
+        function begin() {
+            var list = [1, 3, 5, 7, 9, 11];
+            // Array
+            var sum = addEnds(list);
+            document.getElementById("result1").innerHTML = "The values of the Array is: " + list.toString();
+            document.getElementById("result2").innerHTML = "The sum of the first and last values of the Array is: " + sum;
+        }
+
+        function addEnds(list) {
+            // Process that returns the sum of the first and last values in an array
+            var last = list[list.length - 1];
+            var sum = list[0] + last;
+            return sum;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Info Section -->
+        <section class="info">
+            <img src="/img/hello.jpeg" alt="">
+            <div>
+                <h2>Arrays and Loops</h2>
+                <p>This process will return the values of the array<br> and the sum of the first and last values in an array.</p>
+                <a href="#" class="btn" onclick="begin()">Continue &raquo</a>
+                <br>
+                <br>
+                <br>
+
+                <div id="result1"></div>
+                <br>
+                <div id="result2"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>James Vergara R. &copy; 2019</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
