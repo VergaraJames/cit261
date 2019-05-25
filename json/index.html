@@ -15,7 +15,7 @@
     </script>
 
     <!-- file of CSS-->
-    <link rel="stylesheet" href="./app/index.css">
+    <link rel="stylesheet" href="app/index.css">
     <title>JAMES VERGARA RINCON | CIT 261</title>
 
     <script>
@@ -55,7 +55,7 @@
                         "Wheater of: " + line;
                 }
             };
-            xhttp.open("GET", "./app/objects.json", true);
+            xhttp.open("GET", "app/objects.json", true);
             xhttp.send();
         }
     </script>
@@ -68,7 +68,7 @@
         <nav class="main-nav">
             <ul>
                 <li>
-                    <a href="/index.html">Home</a>
+                    <a href="index.html">Home</a>
                 </li>
                 <li>
                     <a href="#">About</a>
@@ -84,7 +84,7 @@
 
         <!-- Info Section -->
         <section class="info">
-            <img src="/img/motherboard.jpg" alt="">
+            <img src="img/motherboard.jpg" alt="">
             <div>
                 <h2> J S O N</h2>
                 <p> This script is reading data from file "objects.json".<br> The file has data from the weather of Bogota, Colombia<br> and the information was taken using public API from the site:<br> "https://api.openweathermap.org" <br> The script shows
