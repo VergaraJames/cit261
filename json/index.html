@@ -40,16 +40,16 @@
                     for (var i = 0; i < data.length; i++) {
                         console.log(data[i]);
 
-                        line += `<li>
-                            City ==> ${data[i].name} <br>
+                        line += `
+                            City ==> <h2>${data[i].name}</h2> <br>
                             Country ==> ${data[i].sys.country} <br>
-                            Temperature => ${data[i].main.temp} <br>
+                            Temperature => <h4>${data[i].main.temp}</h4> <br>
                             Clouds ==> ${data[i].weather[0].description}<br>
                             Wind Speed => ${data[i].wind.speed} <br>
                             Pressure => ${data[i].main.pressure}<br>
                             Humity => ${data[i].main.humidity}<br>
                             Geo coords => [${data[i].coord.lon},${data[i].coord.lat}]<br>
-                            </li>`;
+                            `;
                     }
                     document.getElementById("result1").innerHTML =
                         "Wheater of: " + line;
