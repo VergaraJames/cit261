@@ -1,0 +1,10 @@
+{
+    "persons": [
+        { "name": "fabian", "nickname": "faby" },
+        { "name": "teofilo", "nickname": "teo" },
+        { "name": "ruperto", "nickname": "ruper" },
+        { "name": "alejandro", "nickname": "alejo" },
+        { "name": "Maria", "nickname": "mary" },
+        { "name": "Valerie", "nickname": "Val" }
+    ]
+}

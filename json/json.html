@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- link fo Fonts of CSS from https://fontawesome.com  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    </script>
+
+    <!-- file of CSS-->
+    <link rel="stylesheet" href="json.css">
+    <title>JAMES VERGARA RINCON | CIT 261</title>
+
+    <script>
+        function begin() {
+            /* from w3school.com https://www.w3schools.com/xml/xml_http.asp */
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var answer = JSON.parse(xhttp.responseText);
+                    var persons = answer.persons;
+
+                    var gate = '';
+
+                    for (var i = 0; i < persons.length; i++) {
+                        gate += `<li>${persons[i].name} su nickname es ${persons[i].nickname}</li>`;
+
+                        console.log(persons[i]);
+
+                    }
+                    document.getElementById("result1").innerHTML = "The nickname is: " + gate;
+
+                }
+            };
+            xhttp.open("GET", "objects.json", true);
+            xhttp.send();
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Info Section -->
+        <section class="info">
+            <img src="/img/motherboard.jpg" alt="">
+            <div>
+                <h2> J S O N</h2>
+                <p>Lorem ipsum dolor sit .</p>
+                <a href="#" class="btn" onclick="begin()">Continue &raquo</a>
+                <br>
+                <br>
+                <br>
+                <div id="result1"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>James Vergara R. &copy; 2019</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
