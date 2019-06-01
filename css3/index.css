@@ -256,7 +256,7 @@ div#box1 {
     position: relative;
     top: 100px;
     left: -400px;
-    text overflow: hidden;
+    text-overflow: hidden;
     animation-name: myanimation;
     animation-duration: 4s;
     animation-iteration-count: infinite;
