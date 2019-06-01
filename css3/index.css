@@ -98,9 +98,14 @@ footer {
     background: #3E689D;
     width: 240px;
     height: 200px;
-    border-radius: 7px;
+    border-radius: 10px;
     backface-visibility: hidden;
     transition: transform .5s linear 0s;
+    padding: 5px;
+    border: 1px solid red;
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--primary);
 }
 
 .flip3d>.back {
@@ -115,6 +120,8 @@ footer {
     /* size image */
     background-size: 100%;
     background-position: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--primary);
 }
 
 .flip3d:hover>.front {
