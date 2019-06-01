@@ -64,9 +64,6 @@ img {
     color: var(--light);
 }
 
-
-/* Info */
-
 .info {
     background: var(--primary);
     box-shadow: var(--shadow);
@@ -76,13 +73,96 @@ img {
     padding: 3rem;
 }
 
-
-/* Footer */
-
 footer {
     margin-top: 2rem;
     background: var(--dark);
     color: var(--light);
     text-align: center;
     padding: 1rem;
+}
+
+.flip3d {
+    width: 240px;
+    height: 200px;
+    margin: 20px;
+    float: left;
+    /* size image */
+    background: 100%;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.flip3d>.front {
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);
+    background: #3E689D;
+    width: 240px;
+    height: 200px;
+    border-radius: 7px;
+    backface-visibility: hidden;
+    transition: transform .5s linear 0s;
+}
+
+.flip3d>.back {
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    background: green;
+    width: 240px;
+    height: 200px;
+    border-radius: 7px;
+    backface-visibility: hidden;
+    transition: transform .5s linear 0s;
+    /* size image */
+    background-size: 100%;
+    background-position: center;
+}
+
+.flip3d:hover>.front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.flip3d:hover>.back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.textOverImage {
+    position: relative;
+    width: 240px;
+    height: 200px;
+    float: left;
+    margin: 4px;
+    background-size: 100%;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.textOverImage:hover {
+    background-size: 110%;
+}
+
+.textOverImage:after {
+    position: absolute;
+    top: 90%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    white-space: pre-wrap;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 0 8px;
+    content: attr(data-text);
+    transition: 0.5s;
+}
+
+.textOverImage:hover:after {
+    top: 0;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.textOverImage:first-line {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
 }
