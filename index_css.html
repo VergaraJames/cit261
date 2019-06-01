@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="index_css.css">
+    <title>JAMES VERGARA Projects | https://vergarajames.github.io/cit261/ </title>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="https://vergarajames.github.io/cit261/">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Info Section -->
+        <section class="info">
+            <img src="img/hello.jpeg" alt="">
+            <div>
+                <h2>CSS3 Transition and Animation</h2>
+                <p>An animation lets an element gradually change from one style to another. To use CSS animation, you must first specify some keyframes for the animation. Keyframes hold what styles the element will have at certain times.</p>
+                <!-- <a href="#" class="btn">Learn More</a> -->
+            </div>
+        </section>
+
+        <!-- Animation FLIP 3 D Section -->
+        <section class="info">
+            <div>
+                <h2> Animations Flip cards ... </h2>
+                <p>You can see an animated flipping effect in 3D space. This example is using CSS code and display content on the front and back sides The flip animations can be used with games, recipes or photos. </p>
+                <a href="#" class="btn">To display the efect move the MOUSE over the picture</a>
+            </div>
+
+            <div class="flip3d">
+                <div class="back" style="background-image:url(img/calm.png)">This is the BACK of the card. </div>
+                <div class="front">FRONT - This is the front of the card. About the FLIP BOX: Move the mouse over this object "Blue Rectangle" and you can see the flip animation. </div>
+            </div>
+        </section>
+
+        <!-- Animation - Picture and text into the card -->
+
+        <section class="info">
+            <div>
+                <h2> Animations picture and text ... </h2>
+                <p>You can see an animated effect with text and picture zoom. This example is using CSS code and displays the text content when the Mouse is over the picture. </p>
+                <a href="#" class="btn">To display the efect move the MOUSE over the picture</a>
+            </div>
+
+            <div class="textOverImage" style="background-image:url(img/dog.jpg)" data-text="The Golden Retriever is a large-sized. They were named 'retriever' because of their ability to retrieve shot game undamaged due to their soft mouth. ">
+
+        </section>
+
+        <!-- Animation FLIP 3 D Section -->
+
+        <section class="info">
+
+            <header id="showcase">
+                <h1>Example of Landing</h1>
+            </header>
+
+            <div id="content" class="container">
+                In this example, a title moves from the top to the bottom. Additionally, a paragraph moves from the left side to the right side of the screen. These movements are automatically executed from Javascript at the moment of loading the page. To visualize it
+                again, press the F5 key.
+            </div>
+
+        </section>
+        <section class="info">
+            <div class="leftcol">
+                <h2> Transitions ... </h2>
+                <!-- left column content here -->
+                <div id="box1">Text </div>
+            </div>
+            <div class="rightcol">
+                <!-- right column content here -->
+                <ul>
+                    <li><button onclick="changeBG('box1','#F0F');"> Magenta</button></li>
+                    <li><button onclick="changeBG('box1','#0C0');"> Green</button></li>
+                    <li><button onmouseover="changeBG('box1','#9DCEFF');"> Move the Mouse Over for Original Color </button></li>
+
+                </ul>
+            </div>
+
+        </section>
+        <script src="index_css.js"></script>
+        <!-- Footer -->
+        <footer>
+            <p>James Vergara R. &copy; 2019</p>
+        </footer>
+</body>
+
+</html>
