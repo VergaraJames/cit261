@@ -1,6 +1,6 @@
 /* CSS Variables */
 
-:root {
+ :root {
     --primary: #ddd;
     --dark: #333;
     --light: #fff;
@@ -251,17 +251,50 @@ footer {
 }
 
 div#box1 {
-    width: 400px;
-    height: 200px;
+    background: #3E689D;
+    width: 50px;
+    height: 50px;
     position: relative;
-    top: 100px;
-    left: -400px;
-    text-overflow: hidden;
     animation-name: myanimation;
     animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation-iteration-count: 2;
     animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+    /* animation-iteration-count: infinite; */
+    /* animation-fill-mode: forwards; */
+    /* animation-delay: 2s; */
+    /* animation-direction: alternate; */
+    /* animation-timing-function: ease-in-out; */
+}
+
+@keyframes myanimation {
+    0% {
+        background-color: white;
+        left: 0px;
+        top: 0px;
+        border-radius: 0 0 0 0;
+    }
+    25% {
+        background-color: red;
+        left: 100px;
+        top: 0px;
+        border-radius: 50% 0 0 0;
+    }
+    50% {
+        background-color: green;
+        left: 100px;
+        top: 50px;
+        border-radius: 50% 50% 0 0
+    }
+    75% {
+        background-color: blue;
+        left: 0px;
+        top: 50px;
+        border-radius: 50% 50% 50% 0;
+    }
+    100% {
+        background-color: white;
+        left: 0px;
+        top: 0px;
+        border-radius: 50% 50% 50% 50%;
+    }
 }
