@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- link fo Fonts of CSS from https://fontawesome.com  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!-- to obtaing the data of wheather from Bogota, Colombia with metric units, the link is:
+    https://api.openweathermap.org/data/2.5/weather?q=Bogota,co&APPID=04da029b49107c7e93dca87abc168e57&units=metric
+    -->
+    </script>
+
+    <!-- file of CSS-->
+    <link rel="stylesheet" href="ajax/ajax.css">
+    <title>JAMES VERGARA RINCON | CIT 261</title>
+</head>
+
+<body>
+
+    <script>
+        function begin() {
+            /*  const url = `https://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.countryCode}&appid=${this.apiKey}&units=metric`; */
+            getdata();
+        }
+
+        function getdata() {
+            const apiKey = 'f7ee9df4b712457a78edab4465753b2a';
+            const city = document.getElementById('city').value;
+            const countryCode = document.getElementById('countryCode').value
+                /* instruction from https://openweathermap.org/current */
+                /* api.openweathermap.org/data/2.5/weather?q={city name},{country code} */
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${apiKey}&units=metric`;
+            const api = new XMLHttpRequest();
+            /* from w3school.com https://www.w3schools.com/xml/xml_http.asp */
+            api.open("GET", url, true);
+            api.send();
+
+            api.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    /* convert the information to JSON */
+                    let data = JSON.parse(this.responseText);
+                    console.log(data.country);
+                    let result = document.querySelector("#result");
+
+                    /* result begin with empty value */
+                    result.innerHTML = " ";
+                    result.innerHTML += ` <li> <h3>City: ${data.name}, ${data.sys.country}</h3> <br> 
+                     Temperature: ${data.main.temp} <br> Clouds: ${data.weather[0].description} <br>
+                     WindSpeed: ${data.wind.speed} <br> Pressure: ${data.main.pressure} <br>
+                     Humity: ${data.main.humidity} <br>
+                     Geo [long: ${data.coord.lon}, Lat: ${data.coord.lat}]
+                     </li>`;
+
+                };
+            }
+        }
+    </script>
+
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Info Section -->
+        <section class="info">
+            <!--    <img src="img/business.jpeg" alt="">  -->
+            <div>
+                <h2> A J A X </h2>
+                <p> This script uses data from API site "https://api.openweathermap.org".
+                    <br> Please write the City and Country Code (Example: Bogota, Co)<br> and the program will get the information using public API from the site:<br> "https://api.openweathermap.org" <br>
+                    <br>
+                </p>
+                <input type="text" id="city" class="form-control" placeholder="City" autofocus>
+                <input type="text" id="countryCode" class="form-control" placeholder="Country Code">
+                <a href="#" class="btn" onclick="begin()">Continue &raquo</a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div id="section">
+                <ul id="result"></ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>James Vergara R. &copy; 2019</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
