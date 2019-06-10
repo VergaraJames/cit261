@@ -9,13 +9,13 @@
     <!-- link fo Fonts of CSS from https://fontawesome.com  -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-    <!-- to obtaing the data of wheather from Bogota, Colombia with metric units, the link is:
+    <!-- to obtaing the information of wheather from Bogota, Colombia with metric units, the link is:
     https://api.openweathermap.org/data/2.5/weather?q=Bogota,co&APPID=04da029b49107c7e93dca87abc168e57&units=metric
     -->
     </script>
 
     <!-- file of CSS-->
-    <link rel="stylesheet" href="ajax.css">
+    <link rel="stylesheet" href="ajax/ajax.css">
     <title>JAMES VERGARA RINCON | CIT 261</title>
 </head>
 
@@ -50,9 +50,11 @@
                     /* result begin with empty value */
                     result.innerHTML = " ";
                     result.innerHTML += ` <li> <h3>City: ${data.name}, ${data.sys.country}</h3> <br> 
-                     Temperature: ${data.main.temp} <br> Clouds: ${data.weather[0].description} <br>
-                     WindSpeed: ${data.wind.speed} <br> Pressure: ${data.main.pressure} <br>
-                     Humity: ${data.main.humidity} <br>
+                     Temperature: ${data.main.temp} °C <br>
+                     Temp Min: ${data.main.temp_min} °C  -  Temp Max: ${data.main.temp_max} °C  <br>
+                     Weather: ${data.weather[0].main} - ${data.weather[0].description} <br>
+                     WindSpeed: ${data.wind.speed} <br> Pressure: ${data.main.pressure} hpa <br>
+                     Humity: ${data.main.humidity} % <br>
                      Geo [long: ${data.coord.lon}, Lat: ${data.coord.lat}]
                      </li>`;
 
@@ -86,7 +88,7 @@
             <div>
                 <h2> A J A X </h2>
                 <p> This script uses data from API site "https://api.openweathermap.org".
-                    <br> Please write the City and Country Code (Example: Bogota, Co)<br> and the program will get the information using public API from the site:<br> "https://api.openweathermap.org" <br>
+                    <br> Please write the Name of City and Country Code (Example: Bogota, Co)<br> and the program will get the information using public API from the site:<br> "https://api.openweathermap.org" <br>
                     <br>
                 </p>
                 <input type="text" id="city" class="form-control" placeholder="City" autofocus>
