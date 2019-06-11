@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- link fo Fonts of CSS from https://fontawesome.com  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!-- to obtaing the information of wheather from Bogota, Colombia with metric units, the link is:
+    https://api.openweathermap.org/data/2.5/weather?q=Bogota,co&APPID=04da029b49107c7e93dca87abc168e57&units=metric
+    -->
+    </script>
+
+    <!-- file of CSS-->
+    <link rel="stylesheet" href="anim.css">
+    <title>JAMES VERGARA RINCON | CIT 261</title>
+</head>
+
+<body>
+
+    <script>
+        /* Script   */
+        function changeColor(newColor) {
+            var elem = document.getElementById('texttochange');
+            elem.style.color = newColor;
+        }
+
+        function changeBgr(newcolor) {
+            var element = document.querySelector("#box1");
+            element.style.transition = "background 1.0s linear 0s";
+            element.style.background = newcolor;
+        }
+
+        /*    
+        const city = document.getElementById('city').value;
+        const countryCode = document.getElementById('countryCode').value
+       
+            let result = document.querySelector("#result");
+
+                /* result begin with empty value */
+        /*
+                            result.innerHTML = " ";
+                            result.innerHTML += ` <li> <h3>City: ${data.name}, ${data.sys.country}</h3> <br> 
+                             Temperature: ${data.main.temp} °C <br>
+                             Temp Min: ${data.main.temp_min} °C  -  Temp Max: ${data.main.temp_max} °C  <br>
+                             Weather: ${data.weather[0].main} - ${data.weather[0].description} <br>
+                             WindSpeed: ${data.wind.speed} <br> Pressure: ${data.main.pressure} hpa <br>
+                             Humity: ${data.main.humidity} % <br>
+                             Geo [long: ${data.coord.lon}, Lat: ${data.coord.lat}]
+                             </li>`;
+        */
+    </script>
+
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Info Section -->
+        <section class="info">
+            <!-- left column content here -->
+            <div class="leftcol">
+                <h2> CSS ANIMATIONS </h2>
+                <p id="texttochange"> This script has diferrente options </p>
+                <br>
+                <p id="texttochange"> The first option permits to change the color of the fonts </p>
+                <br>
+                <a href="#" class="btn" onclick="changeColor('blue')">BLUE &raquo</a>
+                <a href="#" class="btn" onclick="changeColor('cyan')">CYAN &raquo</a>
+                <a href="#" class="btn" onclick="changeColor('red')">RED &raquo</a>
+                <a href="#" class="btn" onclick="changeColor('black')">BLACK &raquo</a>
+                <br>
+                <br>
+                <p> The second option permits to change the color of the background </p>
+                <a href="#" class="btn" onclick="changeBgr('blue')">BLUE &raquo</a>
+                <a href="#" class="btn" onclick="changeBgr('cyan')">CYAN &raquo</a>
+                <a href="#" class="btn" onclick="changeBgr('red')">RED &raquo</a>
+                <a href="#" class="btn" onclick="changeBgr('black')">BLACK &raquo</a>
+                <br>
+                <br>
+                <br>
+
+            </div>
+            <div class="rightcol">
+                <div class="view">
+                    <div class="message">
+                        C S S - A N I M A T I O N S
+                    </div>
+                    <div class="red_eye"></div>
+                    <div id="box1">Color of background </div>
+                </div>
+
+                <!-- right column content here -->
+                <div id="section">
+                    <ul id="result"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>James Vergara R. &copy; 2019 - <a href="https://github.com/VergaraJames/cit261" target="_blank" class="btn">GitHub Code</a></p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
