@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- link fo Fonts of CSS from https://fontawesome.com  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!-- to obtaing the data of wheather from Bogota, Colombia with metric units, the link is:
+    https://api.openweathermap.org/data/2.5/weather?q=Bogota,co&APPID=04da029b49107c7e93dca87abc168e57&units=metric
+    -->
+    </script>
+
+    <!-- file of CSS-->
+    <link rel="stylesheet" href="app/index.css">
+    <title>JAMES VERGARA RINCON | CIT 261</title>
+
+    <script>
+        function begin() {
+            /* from w3school.com https://www.w3schools.com/xml/xml_http.asp */
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    //Converting data into a JS object 
+                    var parse = JSON.parse(xhttp.responseText);
+                    var data = parse.data;
+                    console.log("Parse ==>");
+                    console.log(parse);
+
+                    //Converting data into a String
+                    var string = JSON.stringify(parse);
+                    console.log("String ==>");
+                    console.log(string);
+
+                    var line = '';
+
+                    for (var i = 0; i < data.length; i++) {
+                        console.log(data[i]);
+
+                        line += `
+                            City ==> <h2>${data[i].name}</h2> <br>
+                            Country ==> ${data[i].sys.country} <br>
+                            Temperature => <h4>${data[i].main.temp}</h4> <br>
+                            Clouds ==> ${data[i].weather[0].description}<br>
+                            Wind Speed => ${data[i].wind.speed} <br>
+                            Pressure => ${data[i].main.pressure}<br>
+                            Humity => ${data[i].main.humidity}<br>
+                            Geo coords => [${data[i].coord.lon},${data[i].coord.lat}]<br>
+                            `;
+                    }
+                    document.getElementById("result1").innerHTML =
+                        "Wheater of: " + line;
+                }
+            };
+            xhttp.open("GET", "app/objects.json", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="https://vergarajames.github.io/cit261/">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Info Section -->
+        <section class="info">
+            <img src="img/business.jpeg" alt="">
+            <div>
+                <h2> J S O N</h2>
+                <p> This script is reading data from file "objects.json".<br> The file has data from the weather of Bogota, Colombia<br> and the information was taken using public API from the site:<br> "https://api.openweathermap.org" <br> The script shows
+                    the result and additionally,<br> the result can be observed thru the CONSOLE press F12<br>
+                </p>
+            </div>
+            <a href="#" class="btn" onclick="begin()">Continue &raquo</a>
+            <br>
+            <br>
+            <br>
+            <div id="result1"></div>
+    </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>James Vergara R. &copy; 2019</p>
+    </footer>
+    </div>
+</body>
+
+</html>
