@@ -209,6 +209,25 @@ footer {
     }
 }
 
+
+/* Transition */
+
+#content1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s;
+    /* For Safari 3.1 to 6.0 */
+    transition: width 2s;
+}
+
+#content1:hover {
+    width: 300px;
+}
+
+
+/* Tranform */
+
 #content2:hover {
     -ms-transform: skewX(20deg);
     /* IE 9 */
