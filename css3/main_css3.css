@@ -218,7 +218,8 @@ footer {
     background: red;
     -webkit-transition: width 2s;
     /* For Safari 3.1 to 6.0 */
-    transition: width 2s;
+    transition: width 1s;
+    transition-delay: 1s;
 }
 
 #content1:hover {
@@ -251,6 +252,7 @@ footer {
     }
     100% {
         left: 0;
+        transition-delay: 10s;
     }
 }
 
