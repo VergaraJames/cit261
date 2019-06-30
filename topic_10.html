@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="video_10/main_10.css">
+    <script src="video_10/canvas.js"></script>
+    <title>JAMES VERGARA Projects | https://vergarajames.github.io/cit261/ </title>
+</head>
+
+
+<body onload="start()">
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="https://vergarajames.github.io/cit261/">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Info Section -->
+        <section class="info">
+            <img src="img/GC.png" alt="">
+            <div>
+                <h3>Topic 10</h3>
+                <p>HTML5 Tags - Video, Audio, and Canvas</p>
+            </div>
+        </section>
+
+        <!-- HTML Multimedia - Video -->
+        <section class="info1">
+            <h3>Video</h3>
+
+            <h4>The video tag allows developers to embed videos on their website.</h4>
+            <p>The HTML video element embeds a media player which supports video playback into the document. You can use the HTML video element for audio content as well, but the audio element may provide a more appropriate user experience.
+            </p>
+            <div class="message">
+                <h3>The new features are:</h3>
+                <ul>
+                    <li><span class="specialText">autoPlay</span> A Boolean attribute; if specified, the video automatically begins to play back as soon as it can do so without stopping to finish loading the data.</li>
+                    <li><span class="specialText">width and height</span> You can control the video size either with these attributes or with CSS. In both cases, videos maintain their native width-height ratio — known as the aspect ratio. If the aspect ratio
+                        is not maintained by the sizes you set, the video will grow to fill the space horizontally, and the unfilled space will just be given a solid background color by default.</li>
+                    <li><span class="specialText">muted</span> Causes the media to play with the sound turned off by default.</li>
+                    <li><span class="specialText">src</span> is the url where you emded your video. You can also use the <span class="specialText">source</span> tag. May contain more than one video source.</li>
+                    <li><span class="specialText">poster</span> The URL of an image which will be displayed before the video is played. It is intended to be used for a splash screen or advertising screen.</li>
+                    <li><span class="specialText">loop</span> Makes the video (or audio) start playing again whenever it finishes. This can also be annoying, so only use if really necessary.</li>
+                    <li><span class="specialText">preload</span> Used for buffering large files; it can take one of three values: <span class="specialText">"none"</span> does not buffer the file <span class="specialText">"auto"</span> buffers the media file
+                        <span class="specialText"> "metadata" </span>buffers only the metadata for the file.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="info1">
+            <!--
+            <div>
+                <iframe src='//players.brightcove.net/710874264001/default_default/index.html?videoId=3766094142001' width="640" height="480" allowfullscreen frameborder=0></iframe>
+            
+            </div>
+            <div class="message"> Social Media Guidelines Elder David A. Bednar discusses four guidelines to follow as we use social media to convey gospel messages. (4:40)
+            </div>
+-->
+            <div class="video">
+                <video controls src="img/social-media-guidelines.mp4" width="620">
+                        Sorry, your browser doesn't support embedded videos.
+                    </video>
+
+        </section>
+
+        <section class="info1">
+            <h3>Audio</h3>
+            <p>The HTML <span class="specialText">audio</span> element is used to embed sound content in documents. It may contain one or more audio sources, represented using the
+                <span class="specialText">src </span> attribute or the <span class="specialText">source</span> element: the browser will choose the most suitable one. Audio attributes are very similar to the video attributes discussed earlier. Below is
+                an examle of a audio element with controls built-in for user-friendliness. The audio element is wrapped in a div that is then styled with padding, border, border-radius, and box-shadow attributes.
+            </p>
+
+            <div class="audio">
+                <p>Come, follow Me.</p>
+                <audio controls="controls"> <source src="img/come-follow-me.mp3" />  </audio>
+            </div>
+        </section>
+
+
+        <h3>special feature..</h3>
+        <p>Pictured below is the Kyiv, Ukraine, temple. My mom sang in the church choir at its dedication!</p>
+        <p><span class="specialText">Object-position</span> adjusts the positioning of the video within the element's frame. </p>
+
+        <div class="videoexample">
+            <div>
+                <img id="example-element" src="media/kyivtemple.png" alt="" style="object-position: left bottom;">
+                <span class="specialText">object-position:left bottom;</span>
+            </div>
+            <div>
+                <img id="example-element" src="media/kyivtemple.png" alt="" style="object-position: 50% 50%;">
+                <span class="specialText">object-position:50% 50%;</span>
+            </div>
+            <div>
+                <img id="example-element" src="media/kyivtemple.png" alt="" style="object-position: right top;">
+                <span class="specialText">object-position:right top;</span>
+            </div>
+        </div>
+
+
+
+        <!-- info on canvas tag in html -->
+        <h3>Canvas</h3>
+        <p>Canvas is used to draw graphics via JavaScript. The initial size of the canvas is 300px wide and 150px high. If your browser does not support canvas you will see fallback content just like with the audio and video tags. </p>
+
+        <div class="canvas">
+            <canvas id="block" width="150px" style="background-color: #a8cb96;">
+          An alternative text describing what your canvas displays.
+        </canvas>
+
+            <canvas id="smile" width="150px" style="background-color: #90cbd9;">
+          An alternative text describing what your canvas displays.
+        </canvas>
+
+            <canvas id="svg" width="150px" style="background-color: #6d163c;">
+          An alternative text describing what your canvas displays.
+        </canvas>
+
+            <canvas id="text" width="150px" style="background-color: #90cbd9;">
+          An alternative text describing what your canvas displays.
+        </canvas>
+
+            <canvas id="picture" width="150px" style="background-color: #acb7c4;">
+          An alternative text describing what your canvas displays.
+        </canvas>
+        </div>
+        <!-- div class canvas ends here -->
+
+        <p>Above examples are using several canvases. However, all shapes can be easily combined into one canvas. There is no limit to how many shapes can be created in one function.</p>
+
+        <ol>
+            <li>This example is taking advantage of the simple rectangular shapes with a transperency value of 0.7.</li>
+            <li>Here I am using the <span class="specialText">arc()</span> and
+                <span class="specialText">moveTo()</span> functions to draw circles and half circles, as well as <span class="specialText">strokeStyle()</span> and <span class="specialText">lineWidth()</span> to change default color and default line width
+                from 1px to 3px.</li>
+            <li>On this canvas I am using an SVG path with
+                <span class="specialText">shadowOffsetX()</span> and
+                <span class="specialText">shadowBlur()</span>.</li>
+            <li>The fourth example is a simple text using
+                <span class="specialText">fillText()</span> with a linear gradient.</li>
+            <li>The last canvas is using a <span class="specialText">drawImage()</span> function and specifying the image sourse.</li>
+        </ol>
+
+
+        <!-- resources -->
+        <h3>Resources</h3>
+        <p>The Video Embeded Element by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank">Mozilla</a></p>
+        <p>Canvas Tutorial by <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" target="_blank">Mozilla</a></p>
+
+        </div>
+        <!-- div class content ends here -->
+
+
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>James Vergara R. &copy; 2019</p>
+    </footer>
+</body>
+
+</html>

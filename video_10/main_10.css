@@ -1,0 +1,259 @@
+/* CSS Variables */
+
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+}
+
+body {
+    background: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4;
+}
+
+.btn {
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+}
+
+
+/* Navigation */
+
+.main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+}
+
+.info {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+}
+
+.info1 {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+}
+
+.flip3d {
+    width: 240px;
+    height: 200px;
+    margin: 20px;
+    float: left;
+    /* size image */
+    background: 100%;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.flip3d>.front {
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);
+    background: #3E689D;
+    width: 240px;
+    height: 200px;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transition: transform .5s linear 0s;
+    padding: 5px;
+    border: 1px solid red;
+    margin: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--primary);
+}
+
+.flip3d>.back {
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    background: green;
+    width: 240px;
+    height: 200px;
+    border-radius: 7px;
+    backface-visibility: hidden;
+    transition: transform .5s linear 0s;
+    /* size image */
+    background-size: 100%;
+    background-position: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--primary);
+}
+
+.flip3d:hover>.front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.flip3d:hover>.back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.textOverImage {
+    position: relative;
+    width: 240px;
+    height: 200px;
+    float: left;
+    margin: 4px;
+    background-size: 100%;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.textOverImage:hover {
+    background-size: 120%;
+}
+
+.textOverImage:after {
+    position: absolute;
+    /* TOP shows the first line over the picture, when is 100% thext is hidden */
+    top: 85%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    white-space: pre-wrap;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 0 8px;
+    content: attr(data-text);
+    transition: 0.5s;
+}
+
+.textOverImage:hover:after {
+    top: 0;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.textOverImage:first-line {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.btn:hover {
+    transform: rotateY(180deg);
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+#showcase {
+    height: 100px;
+}
+
+
+/*  Video style */
+
+.videoexample {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+}
+
+#example-element {
+    height: 250px;
+    width: 250px;
+    object-fit: none;
+    border: 1px solid black;
+}
+
+.video {
+    width: 620px;
+    text-align: center;
+    border: 10px solid var(--dark);
+}
+
+#message {
+    width: 300px;
+    height: auto;
+    /* margin: 40px auto 40px auto;*/
+    border: 2px solid var(--shadow);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.videoexample {
+    margin-bottom: 40px;
+}
+
+.audio {
+    width: 50%;
+    height: auto;
+    text-align: center;
+    padding: 40px 5%;
+    box-sizing: border-box;
+    box-shadow: 0 0 21px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.audio p {
+    font-size: 30px;
+}
+
+.canvas {
+    display: flex;
+    justify-content: space-around;
+}
+
+.specialText {
+    font-style: italic;
+    font: bold;
+    font-size: 1.3rem;
+}
