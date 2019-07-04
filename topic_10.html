@@ -76,6 +76,9 @@
                 <video controls src="img/social-media-guidelines.mp4" width="620">
                         Sorry, your browser doesn't support embedded videos.
                     </video>
+            </div>
+            <div class="message"> Social Media Guidelines Elder David A. Bednar discusses four guidelines to follow as we use social media to convey gospel messages. (4:40)
+            </div>
 
         </section>
 
@@ -88,7 +91,16 @@
 
             <div class="audio">
                 <p>Come, follow Me.</p>
-                <audio controls="controls"> <source src="img/come-follow-me.mp3" />  </audio>
+                <!-- Original controls -->
+                <!-- <audio controls="player" src="img/come-follow-me.mp3"></audio>  -->
+                <audio id="player" src="img/come-follow-me.mp3"></audio>
+                <div>
+                    <!-- New controls -->
+                    <button onclick="document.getElementById('player').play()">Play</button>
+                    <button onclick="document.getElementById('player').pause()">Pause</button>
+                    <button onclick="document.getElementById('player').volume += 0.1">Vol+ </button>
+                    <button onclick="document.getElementById('player').volume -= 0.1">Vol- </button>
+                </div>
             </div>
         </section>
 
@@ -162,8 +174,8 @@
         <p>The Video Embeded Element by <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank">Mozilla</a></p>
         <p>Canvas Tutorial by <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial" target="_blank">Mozilla</a></p>
 
-        </div>
-        <!-- div class content ends here -->
+    </div>
+    <!-- div class content ends here -->
 
 
     </div>
