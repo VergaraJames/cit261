@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script defer src="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="video_10/main_10.css">
+    <script src="video_10/canvas.js"></script>
+
     <title>JAMES VERGARA Projects | https://vergarajames.github.io/cit261/ </title>
+
 </head>
 
 <body onload="start()">
@@ -69,7 +73,6 @@
             </div>
 
         </section>
-        <!-- HTML Multimedia - Audio -->
 
         <section class="info1">
             <h3>Audio</h3>
@@ -92,7 +95,6 @@
                 </div>
             </div>
         </section>
-        <!-- Canvas - picture -->
 
         <section class="info1">
             <div>
@@ -110,7 +112,7 @@
             </div>
 
         </section>
-        <!-- Canvas - Circle or balls -->
+
         <section class="info1">
             <div>
                 <h3>Canvas 2</h3>
@@ -147,23 +149,6 @@
 
         function Clear_image() {
             c5_context.clearRect(1, 1, 600, 300);
-        }
-
-        function draw_circle() {
-            var canvas = document.getElementById("paper"),
-                c = canvas.getContext("2d"),
-                two_PI = Math.PI * 2;
-            var posX = 0,
-                posY = 200;
-            setInterval(function() {
-                posX += 1;
-                c.fillStyle = "rgba(0,0,0,0.03)";
-                c.fillRect(0, 0, canvas.width, canvas.height);
-                c.fillStyle = "white";
-                c.beginPath();
-                c.arc(posX, posY, 50, 0, two_PI, false);
-                c.fill();
-            }, 30);
         }
     </script>
     <!-- Footer -->
