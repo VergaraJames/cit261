@@ -41,22 +41,20 @@
         <!-- HTML Multimedia - Video -->
         <section class="info1">
             <h3>Video</h3>
-
-            <h4>The video tag allows developers to embed videos on their website.</h4>
-            <p>The HTML video element embeds a media player which supports video playback into the document. You can use the HTML video element for audio content as well, but the audio element may provide a more appropriate user experience.
-            </p>
-            <div class="message">
+            <p>The <span class="bold_Text">video</span> tag allows developers to embed videos on their website. Developers learn how to embed video and audio content into a webpage, and add captions/subtitles to video. </p>
+            <div class="info1">
                 <h3>The new features are:</h3>
                 <ul>
-                    <li><span class="specialText">autoPlay</span> A Boolean attribute; if specified, the video automatically begins to play back as soon as it can do so without stopping to finish loading the data.</li>
-                    <li><span class="specialText">width and height</span> You can control the video size either with these attributes or with CSS. In both cases, videos maintain their native width-height ratio — known as the aspect ratio. If the aspect ratio
-                        is not maintained by the sizes you set, the video will grow to fill the space horizontally, and the unfilled space will just be given a solid background color by default.</li>
-                    <li><span class="specialText">muted</span> Causes the media to play with the sound turned off by default.</li>
-                    <li><span class="specialText">src</span> is the url where you emded your video. You can also use the <span class="specialText">source</span> tag. May contain more than one video source.</li>
-                    <li><span class="specialText">poster</span> The URL of an image which will be displayed before the video is played. It is intended to be used for a splash screen or advertising screen.</li>
-                    <li><span class="specialText">loop</span> Makes the video (or audio) start playing again whenever it finishes. This can also be annoying, so only use if really necessary.</li>
-                    <li><span class="specialText">preload</span> Used for buffering large files; it can take one of three values: <span class="specialText">"none"</span> does not buffer the file <span class="specialText">"auto"</span> buffers the media file
-                        <span class="specialText"> "metadata" </span>buffers only the metadata for the file.</li>
+                    <li><span class="bold_Text">autoPlay</span> A Boolean attribute; if specified, the video automatically begins to play back.</li>
+                    <li><span class="bold_Text">width and height</span> You can control the video size either with these attributes or with CSS.</li>
+                    <li><span class="bold_Text">muted</span> Causes the media to play with the sound turned off by default.</li>
+                    <li><span class="bold_Text">src</span> is the url where you emded your video.</li>
+                    <li><span class="bold_Text">poster</span> The URL of an image which will be displayed before the video is played.</li>
+                    <li><span class="bold_Text">loop</span> Makes the video (or audio) start playing again whenever it finishes.</li>
+                    <li><span class="bold_Text">preload</span> Used for buffering large files; it can take one of three values:<br>
+                        <span class="bold_Text">"none"</span> does not buffer the file <br>
+                        <span class="bold_Text">"auto"</span> buffers the media file <br>
+                        <span class="bold_Text"> "metadata" </span>buffers only the metadata for the file.</li>
                 </ul>
             </div>
         </section>
@@ -64,33 +62,54 @@
             <div class="video">
                 <video controls src="img/social-media-guidelines.mp4" width="620">
                         Sorry, your browser doesn't support embedded videos.</video>
-            </div>
-            <div class="message"> Social Media Guidelines Elder David A. Bednar discusses four guidelines to follow as we use social media to convey gospel messages. (4:40)
-            </div>
-
-        </section>
-        <!-- HTML Multimedia - Audio -->
-
-        <section class="info1">
-            <h3>Audio</h3>
-            <p>The HTML <span class="specialText">audio</span> element is used to embed sound content in documents. It may contain one or more audio sources, represented using the
-                <span class="specialText">src </span> attribute or the <span class="specialText">source</span> element: the browser will choose the most suitable one. Audio attributes are very similar to the video attributes discussed earlier. Below is
-                an examle of a audio element with controls built-in for user-friendliness. The audio element is wrapped in a div that is then styled with padding, border, border-radius, and box-shadow attributes.
-            </p>
-
-            <div class="audio">
-                <p>Come, follow Me.</p>
-                <!-- Original controls -->
-                <!-- <audio controls="player" src="img/come-follow-me.mp3"></audio>  -->
-                <audio id="player" src="img/come-follow-me.mp3"></audio>
-                <div>
-                    <!-- New controls -->
-                    <button onclick="document.getElementById('player').play()">Play</button>
-                    <button onclick="document.getElementById('player').pause()">Pause</button>
-                    <button onclick="document.getElementById('player').volume += 0.1">Vol+ </button>
-                    <button onclick="document.getElementById('player').volume -= 0.1">Vol- </button>
+                <div class="info1"> Social Media Guidelines Elder David A. Bednar discusses four guidelines to follow as we use social media to convey gospel messages. (4:40)
                 </div>
             </div>
+        </section>
+        <!-- HTML Multimedia - Audio -->
+        <section class="info1">
+            <h3>Audio</h3>
+            <p>The HTML <span class="bold_Text">audio</span> tag allow developer to embed audio files on their website.</p>
+            <div class="info1">
+                <h3>Global attributes:</h3>
+                <ul>
+                    <li><span class="bold_Text"> autoplay </span> (Boolean): the audio will automatically begin playback.</li>
+                    <li><span class="bold_Text"> controls </span>the browser will offer controls to allow the user to control audio playback.</li>
+                    <li><span class="bold_Text"> crossorigin</span> This enumerated attribute indicates whether to use CORS to fetch the related audio file.
+                        <br>The allowed values are: <span class="bold_Text"> anonymous </span> Sends a cross-origin request without a credential.
+                        <span class="bold_Text"> use-credentials</span> Sends a cross-origin request with a credential.</li>
+                    <li><span class="bold_Text"> loop</span> (Boolean): the audio player will automatically seek back to the start upon reaching the end of the audio.</li>
+                    <li><span class="bold_Text"> muted </span> (Boolean): It indicates whether the audio will be initially silenced.</li>
+                    <li><span class="bold_Text"> preload</span> To provide a hint to the browser about what the author thinks will lead to the best user experience. It may have one of the following values:
+                        <span class="bold_Text"> none: </span> Indicates that the audio should not be preloaded.<br>
+                        <span class="bold_Text"> metadata: </span> Indicates that only audio metadata is fetched.</li>
+                    <li><span class="bold_Text">auto: </span> Indicates that the whole audio file can be downloaded, even if the user is not expected to use it.</li>
+                    <li><span class="bold_Text"> empty string: </span> A synonym of the <span class="bold_Text"> auto </span> value.</li>
+                    <li><span class="bold_Text">src </span> The URL of the audio to embed. </li>
+                </ul>
+            </div>
+            <section class="info1">
+                <div class="audio">
+                    <p>Come, follow Me.</p>
+                    <!-- Original controls -->
+                    <!-- <audio controls="player" src="img/come-follow-me.mp3"></audio>  -->
+                    <audio id="player" src="img/come-follow-me.mp3"></audio>
+                    <div>
+                        <!-- New controls -->
+                        <button onclick="document.getElementById('player').play()">Play</button>
+                        <button onclick="document.getElementById('player').pause()">Pause</button>
+                        <button onclick="document.getElementById('player').volume += 0.1">Vol+ </button>
+                        <button onclick="document.getElementById('player').volume -= 0.1">Vol- </button>
+                    </div>
+                </div>
+                <div class="info1">
+                    <p>
+                        Lyrics <span class="bold_Text"> Come, follow Me (# 116)</span>
+                        <br> 1. "Come, follow me," the Savior said. Then let us in his footsteps tread, For thus alone can we be one With God's own loved, begotten Son. <br> 2. "Come, follow me," a simple phrase, Yet truth's sublime, effulgent rays Are
+                        in these simple words combined To urge, inspire the human mind. <br> 3. Is it enough alone to know That we must follow him below, While trav'ling thru this vale of tears? No, this extends to holier spheres. <br> 4. Not only shall
+                        we emulate His course while in this earthly state, But when we're freed from present cares, If with our Lord we would be heirs.</p>
+                </div>
+            </section>
         </section>
         <!-- Canvas - picture -->
 
