@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="localstrg_05/main.css">
+    <script type="text/javascript" src="localstrg_05/localstorage.js"></script>
+    <title>JAMES VERGARA Projects | https://vergarajames.github.io/cit261/ </title>
+</head>
+
+<body onload="start()">
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="https://vergarajames.github.io/cit261/">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Info Section -->
+        <section class="info">
+            <img src="img/SocialNetworking.jpeg" alt="">
+            <div>
+                <h3>Topic 05</h3>
+                <p>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</p>
+            </div>
+        </section>
+
+        <!-- Boxes Section 1 -->
+        <section class="boxes">
+            <!-- Box 1 -->
+            <div class="box">
+                <i class="fas fa-chart-pie fa-4x"></i>
+                <h3>Count Click button</h3>
+                <button class="btn" type="button" onClick="clearItems()">Reset</button>&nbsp;
+                <p>localStorage.clickcount </p>&nbsp;
+                <div id="result"></div>
+                <button class="btn" type="button" onClick="clickCounter()">Click here..</button>
+            </div>
+            <!-- Box 2 -->
+            <div class="box">
+                <i class="fas fa-globe fa-4x"></i>
+                <h3>Personal Information</h3>
+                <p>Enter in your personal information.<br>Try refreshing your screen and click "Show" to see your information.</p>
+                <button type="button" onClick="populatePerson()">Submit</button>&nbsp;
+                <button type="button" onClick="setUser()">Show</button>&nbsp;
+                <button type="button" onClick="clearItems()">Reset</button>
+
+            </div>
+            <div class="box">
+                <i class="fas fa-cog fa-4x"></i>
+                <form id="form" action="#" method="post">
+                    <fieldset>
+                        <legend>Personal Info</legend>
+                        <label><span>First Name:</span><input id="firstName" type="text"></label>
+                        <label><span>Last Name:</span><input id="lastName" type="text"></label>
+                        <label><span>Email:</span><input id="email" type="text"></label>
+                        <label><span>Phone:</span><input id="phone" type="text"></label>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+        <section class="info">
+            <div id="userOutput"></div>
+
+        </section>
+
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>James Vergara R. &copy; 2019</p>
+    </footer>
+</body>
+
+</html>
