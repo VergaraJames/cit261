@@ -37,7 +37,6 @@
                 <p>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects.</p>
             </div>
         </section>
-
         <section class="info1">
             <div>
                 <p>The <span class="bold_Text"> localStorage </span> and sessionStorage properties allow to save key/value pairs in a web browser.<br> The <span class="bold_Text"> localStorage </span> object stores data with no expiration date. The data
@@ -81,10 +80,8 @@
         <section class="info">
             <!-- to show the information stored in Local Storage -->
             <div id="userOutput"></div>
-
         </section>
     </div>
-
     <script>
         function clickCounter() {
             if (typeof(Storage) !== "undefined") {
@@ -93,37 +90,10 @@
                 } else {
                     localStorage.clickcount = 1;
                 }
-
                 document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
             } else {
                 document.getElementById("result").innerHTML = "Sorry, please upgrade your browser";
             }
-        }
-
-        function clearItems() {
-            window.localStorage.clear();
-            location.reload();
-        }
-
-        function populatePerson() {
-            var userFirstName = document.getElementById("firstName").value;
-            var userLastName = document.getElementById("lastName").value;
-            var userEmail = document.getElementById("email").value;
-            var userPhone = document.getElementById("phone").value;
-
-            var person = {
-                firstName: userFirstName,
-                lastName: userLastName,
-                email: userEmail,
-                phone: userPhone
-            };
-
-            localStorage.setItem('user', JSON.stringify(person));
-            localStorage.setItem('browser-name', navigator.appCodeName);
-            localStorage.setItem('browser-version', navigator.appVersion);
-            localStorage.setItem('browser-cookies', navigator.cookieEnabled);
-
-            document.getElementById("userOutput").innerHTML = "Your information was stored";
         }
 
         function setUser() {
@@ -131,8 +101,30 @@
             var browserName = localStorage.getItem('browser-name');
             var browserVersion = localStorage.getItem('browser-version');
             var browserCookies = localStorage.getItem('browser-cookies');
-
             document.getElementById("userOutput").innerHTML = "<b>User First Name:</b> " + user.firstName + "<br><b>User Last Name:</b> " + user.lastName + "<br><b>User Email:</b> " + user.email + "<br><b>User Phone:</b> " + user.phone + "<br><b>Browser Name:</b> " + browserName + "<br><b>Browser Version:</b> " + browserVersion + "<br><b>Browser Cookies (Enabled):</b> " + browserCookies;
+        }
+
+        function populatePerson() {
+            var userFirstName = document.getElementById("firstName").value;
+            var userLastName = document.getElementById("lastName").value;
+            var userEmail = document.getElementById("email").value;
+            var userPhone = document.getElementById("phone").value;
+            var person = {
+                firstName: userFirstName,
+                lastName: userLastName,
+                email: userEmail,
+                phone: userPhone
+            };
+            localStorage.setItem('user', JSON.stringify(person));
+            localStorage.setItem('browser-name', navigator.appCodeName);
+            localStorage.setItem('browser-version', navigator.appVersion);
+            localStorage.setItem('browser-cookies', navigator.cookieEnabled);
+            document.getElementById("userOutput").innerHTML = "Your information was stored";
+        }
+
+        function clearItems() {
+            window.localStorage.clear();
+            location.reload();
         }
     </script>
     <!-- Footer -->
