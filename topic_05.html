@@ -11,7 +11,7 @@
     <title>JAMES VERGARA Projects | https://vergarajames.github.io/cit261/ </title>
 </head>
 
-<body onload="start()">
+<body>
     <div class="wrapper">
         <!-- Navigation -->
         <nav class="main-nav">
@@ -43,28 +43,17 @@
         <section class="boxes">
             <!-- Box 1 -->
             <div class="box">
-                <i class="fas fa-chart-pie fa-4x"></i>
                 <h3>Count Click button</h3>
                 <button class="btn" type="button" onClick="clearItems()">Reset</button>&nbsp;
-                <p>localStorage.clickcount </p>&nbsp;
+                <p>Local storage stores the number of times you click with the mouse (localStorage.clickcount)</p>&nbsp;
                 <div id="result"></div>
                 <button class="btn" type="button" onClick="clickCounter()">Click here..</button>
             </div>
             <!-- Box 2 -->
             <div class="box">
-                <i class="fas fa-globe fa-4x"></i>
-                <h3>Personal Information</h3>
-                <p>Enter in your personal information.<br>Try refreshing your screen and click "Show" to see your information.</p>
-                <button type="button" onClick="populatePerson()">Submit</button>&nbsp;
-                <button type="button" onClick="setUser()">Show</button>&nbsp;
-                <button type="button" onClick="clearItems()">Reset</button>
-
-            </div>
-            <div class="box">
-                <i class="fas fa-cog fa-4x"></i>
                 <form id="form" action="#" method="post">
                     <fieldset>
-                        <legend>Personal Info</legend>
+                        <legend>Personal Information</legend>
                         <label><span>First Name:</span><input id="firstName" type="text"></label>
                         <label><span>Last Name:</span><input id="lastName" type="text"></label>
                         <label><span>Email:</span><input id="email" type="text"></label>
@@ -72,10 +61,20 @@
                     </fieldset>
                 </form>
             </div>
+            <!-- Box 3 -->
+            <div class="box">
+                <h3>Personal Information</h3>
+                <p>1. Enter your personal information and press SUBMIT.</p>
+                <button type="button" onClick="populatePerson()">Submit</button>&nbsp;
+                <p>2. to see the Local Storage information press SHOW.</p>
+                <button type="button" onClick="setUser()">Show</button>&nbsp;
+                <p>3. To erase Local Storage information press DELETE.</p>
+                <button type="button" onClick="clearItems()">Delete</button>
+            </div>
         </section>
         <section class="info">
+            <!-- to show the information stored in Local Storage -->
             <div id="userOutput"></div>
-
         </section>
 
     </div>
