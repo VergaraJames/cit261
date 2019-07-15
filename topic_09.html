@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="events_09/main_09.css">
+    <title>JAMES VERGARA Projects | https://vergarajames.github.io/cit261/ </title>
+    <style>
+        #myDIV {
+            height: 100px;
+            width: 95%;
+            overflow: hidden;
+            background: orange;
+            position: relative;
+            font-size: 20px;
+        }
+        /* Chrome, Safari, Opera */
+        
+        @-webkit-keyframes mymove {
+            from {
+                top: 0px;
+            }
+            to {
+                top: 200px;
+            }
+        }
+        
+        @keyframes mymove {
+            from {
+                top: 0px;
+            }
+            to {
+                top: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="https://vergarajames.github.io/cit261/">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Info Section -->
+        <section class="info">
+            <img src="img/hello.jpeg" alt="">
+            <div>
+                <h3>Topic 09</h3>
+                <p>Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</p>
+
+            </div>
+        </section>
+        <section class="info1">
+            <div>
+                <!-- Information to developers Section -->
+                <h4>How HTML Events can it be used by developers? </h4>
+                <p>HTML <span class="bold_Text"> events </span> are "things" that happen to HTML elements.<br> When JavaScript is used in HTML pages, JavaScript can "react" on these <span class="bold_Text"> events </span>.</p>
+                <p>
+                    <span class="bold_Text">onchange </span> An HTML element has been changed.<br>
+                    <span class="bold_Text">onclick	</span> The user clicks an HTML element.<br>
+                    <span class="bold_Text">onmouseover	</span> The user moves the mouse over an HTML element.<br>
+                    <span class="bold_Text">onmouseout</span> The user moves the mouse away from an HTML element.<br>
+                    <span class="bold_Text">onkeydown</span> The user pushes a keyboard key.<br>
+                    <span class="bold_Text">onload</span> The browser has finished loading the page.
+                </p>
+            </div>
+        </section>
+        <!-- Boxes Section -->
+        <section class="boxes">
+            <!-- Box 1 -->
+            <div class="box">
+                <h3>On Click button</h3>
+                <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+                <img id="myImage" src="img/pic_bulboff.gif" style="width:75px">
+                <p>1. Turn ON the light pressing the button TURN ON</p>
+                <button class="btn" onclick="document.getElementById('myImage').src='img/pic_bulbon.gif'">Turn ON</button>
+                <p>2. Turn ON the light pressing the button TURN OFF</p>
+                <button class="btn" onclick="document.getElementById('myImage').src='img/pic_bulboff.gif'">Turn OFF</button>
+            </div>
+            <!-- Box 2 -->
+            <div class="box">
+                <h3>On Change</h3>
+                <p>This example uses the HTML DOM to assign an <span class="bold_Text">onchange </span> event to an input element.</p>
+                Enter your name (lowercase) and press ENTER: <input type="text" id="fname">
+                <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+            </div>
+            <!-- Box 3 -->
+            <div class="box">
+                <div class="message">A N I M A T I O N S
+                    <p><span class="bold_Text"> x.addEventListener("animationstart", myStartFunction)</span><br> Start the ANIMATIONS 5 times.</p>
+                </div>
+                <div class="view" id="myDIV" onclick="myFunction()">Click me to start the animation
+
+                </div>
+            </div>
+        </section>
+        <section class="info1">
+            <div>
+                <!-- Information about on mouse ... -->
+                <h3>Difference between onmousemove, onmouseenter and onmouseover.</h3>
+                <p>The <span class="bold_Text">onmousemove </span> event occurs every time the mouse pointer is moved over the div element.</p>
+                <p>The <span class="bold_Text">onmouseenter </span> event only occurs when the mouse pointer enters the div element. </p>
+                <p>The <span class="bold_Text">onmouseover </span> event occurs when the mouse pointer enters the div element, and its child elements (p and span).</p>
+            </div>
+        </section>
+        <!-- Boxes Section -->
+        <section class="boxes">
+            <!-- Box 4 -->
+            <div class="box">
+                <h3>onmousemove</h3>
+                <div class="fieldmouse">
+                    <div onmousemove="myMoveFunction()">
+                        <br>Mouse over me!<br>
+                        <span id="demo"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 5 -->
+            <div class="box">
+                <h3>onmouseenter</h3>
+                <div class="fieldmouse">
+                    <div onmouseenter="myEnterFunction()">
+                        <br>Mouse over me!<br>
+                        <span id="demo2"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Box 6 -->
+            <div class="box">
+                <h3>onmouseover</h3>
+                <div class="fieldmouse">
+                    <div onmouseover="myOverFunction()">
+                        <br>Mouse over me!<br>
+                        <span id="demo3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        var x = 0;
+        var y = 0;
+        var z = 0;
+        document.getElementById("fname").onchange = function() {
+            myFunctionUpper()
+        };
+
+        var x2 = document.getElementById("myDIV");
+
+        // Start the animation with JavaScript
+        function myFunction() {
+            x2.style.WebkitAnimation = "mymove 4s 5"; // Code for Chrome, Safari and Opera
+            x2.style.animation = "mymove 4s 5"; // Standard syntax
+        }
+
+        // Code for Chrome, Safari and Opera
+        x2.addEventListener("webkitAnimationStart", myStartFunction);
+        x2.addEventListener("webkitAnimationIteration", myRepeatFunction);
+        x2.addEventListener("webkitAnimationEnd", myEndFunction);
+
+        // Standard syntax
+        x2.addEventListener("animationstart", myStartFunction);
+        x2.addEventListener("animationiteration", myRepeatFunction);
+        x2.addEventListener("animationend", myEndFunction);
+
+        function myStartFunction() {
+            this.innerHTML = "animationstart event occured - The animation has started";
+            this.style.backgroundColor = "pink";
+        }
+
+        function myRepeatFunction() {
+            this.innerHTML = "animationiteration event occured - The animation was played again";
+            this.style.backgroundColor = "lightblue";
+        }
+
+        function myEndFunction() {
+            this.innerHTML = "animationend event occured - The animation has completed";
+            this.style.backgroundColor = "lightgray";
+        }
+        // to UpperCase letter
+        function myFunctionUpper() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+
+        function myMoveFunction() {
+            document.getElementById("demo").innerHTML = z += 1;
+        }
+
+        function myEnterFunction() {
+            document.getElementById("demo2").innerHTML = x += 1;
+        }
+
+        function myOverFunction() {
+            document.getElementById("demo3").innerHTML = y += 1;
+        }
+    </script>
+    <!-- Footer -->
+    <footer>
+        <p>James Vergara R. &copy; 2019</p>
+    </footer>
+</body>
+
+</html>
