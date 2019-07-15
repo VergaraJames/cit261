@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="dom/main_06.css">
+    <title>JAMES VERGARA Projects | https://vergarajames.github.io/cit261/ </title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="https://vergarajames.github.io/cit261/">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Info Section -->
+        <section class="info">
+            <img src="img/jscode.jpeg" alt="">
+            <div>
+                <h3>Topic 05</h3>
+                <p>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects.</p>
+            </div>
+        </section>
+        <section class="info1">
+            <div>
+                <p>The <span class="bold_Text"> localStorage </span> and sessionStorage properties allow to save key/value pairs in a web browser.<br> The <span class="bold_Text"> localStorage </span> object stores data with no expiration date. The data
+                    will not be deleted when the browser is closed, and will be available the next day, week, or year.<br> The <span class="bold_Text"> localStorage </span> property is read-only.
+                </p>
+            </div>
+        </section>
+        <!-- Boxes Section 1 -->
+        <section class="boxes">
+            <!-- Box 1 -->
+            <div class="box">
+                <h3>Count Click button</h3>
+                <button class="btn" type="button" onClick="clearItems()">Reset</button>&nbsp;
+                <p>Local storage stores the number of times you click with the mouse (localStorage.clickcount)</p>&nbsp;
+                <div id="result"></div>
+                <button class="btn" type="button" onClick="clickCounter()">Click here..</button>
+            </div>
+            <!-- Box 2 -->
+            <div class="box">
+                <form id="form" action="#" method="post">
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <label><span>First Name:</span><input id="firstName" type="text"></label>
+                        <label><span>Last Name:</span><input id="lastName" type="text"></label>
+                        <label><span>Email:</span><input id="email" type="text"></label>
+                        <label><span>Phone:</span><input id="phone" type="text"></label>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- Box 3 -->
+            <div class="box">
+                <h3>Personal Information</h3>
+                <p>1. Enter your personal information and press SUBMIT.</p>
+                <button class="btn" type="button" onClick="populatePerson()">Submit</button>&nbsp;
+                <p>2. to see the Local Storage information press SHOW.</p>
+                <button class="btn" type="button" onClick="setUser()">Show</button>&nbsp;
+                <p>3. To erase Local Storage information press DELETE.</p>
+                <button class="btn" type="button" onClick="clearItems()">Delete</button>
+            </div>
+        </section>
+        <section class="info">
+            <!-- to show the information stored in Local Storage -->
+            <div id="userOutput"></div>
+        </section>
+    </div>
+    <script>
+        function clickCounter() {
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+            } else {
+                document.getElementById("result").innerHTML = "Sorry, please upgrade your browser";
+            }
+        }
+
+        function setUser() {
+            var user = JSON.parse(localStorage.getItem('user'));
+            var browserName = localStorage.getItem('browser-name');
+            var browserVersion = localStorage.getItem('browser-version');
+            var browserCookies = localStorage.getItem('browser-cookies');
+            document.getElementById("userOutput").innerHTML = "<b>User First Name:</b> " + user.firstName + "<br><b>User Last Name:</b> " + user.lastName + "<br><b>User Email:</b> " + user.email + "<br><b>User Phone:</b> " + user.phone + "<br><b>Browser Name:</b> " + browserName + "<br><b>Browser Version:</b> " + browserVersion + "<br><b>Browser Cookies (Enabled):</b> " + browserCookies;
+        }
+
+        function populatePerson() {
+            var userFirstName = document.getElementById("firstName").value;
+            var userLastName = document.getElementById("lastName").value;
+            var userEmail = document.getElementById("email").value;
+            var userPhone = document.getElementById("phone").value;
+            var person = {
+                firstName: userFirstName,
+                lastName: userLastName,
+                email: userEmail,
+                phone: userPhone
+            };
+            localStorage.setItem('user', JSON.stringify(person));
+            localStorage.setItem('browser-name', navigator.appCodeName);
+            localStorage.setItem('browser-version', navigator.appVersion);
+            localStorage.setItem('browser-cookies', navigator.cookieEnabled);
+            document.getElementById("userOutput").innerHTML = "Your information was stored";
+        }
+
+        function clearItems() {
+            window.localStorage.clear();
+            location.reload();
+        }
+    </script>
+    <!-- Footer -->
+    <footer>
+        <p>James Vergara R. &copy; 2019</p>
+    </footer>
+</body>
+
+</html>
