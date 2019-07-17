@@ -1,22 +1,112 @@
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --color1: #3E689D;
+    --color2: #09203F;
+    --color3: #1976d2;
+    --color4: #9575CD;
+    --color5: #B7B7B7;
+    --color6: #000000;
+    --color7: red;
+    --color8: #B71C1C;
+    --color9: #FF9800;
+    --color10: #FFD600;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100vh;
+    background: var(--light);
+    background-image: url("3-weather.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
-body {
-    background: #fff;
+#weatherContainer {
+    background-color: rgba(0, 0, 0, 25);
+    box-shadow: 1px 1px 5px black;
+    padding: 50px;
+    border-radius: 10px;
+    position: absolute;
+    visibility: hidden;
+}
+
+#weatherContainer h1 {
+    margin: 5px;
+    font-size: 42px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#searchContainer {
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#searchContainer input {
+    width: 200px;
+}
+
+#searchContainer button {
+    background-color: #09203F;
+    width: 75px;
+}
+
+#searchControl {
+    box-shadow: 2px 2px 5px black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#weatherMain {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#weatherMain div {
+    display: inline-block;
+}
+
+#weatherDescriptionHeader {
+    font-size: 28px;
+    vertical-align: 50%;
+}
+
+#temperature {
+    font-size: 38px;
+    vertical-align: 25%;
+}
+
+.bottomDetails {
+    display: block;
+    font-size: 24px;
+    text-align: right;
+}
+
+hr {
+    margin-bottom: 20px;
 }
 
 .temp {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: url(temp.gif) no-repeat 50% 50%;
+    /*
+    background-image: url=('0-weather.jpg') no-repeat 50% 50%;
+    */
     background-size: cover;
-    animation: fadeOut 5s linear forwards;
+    animation: fadeOut 3.4s linear forwards;
     opacity: 1;
 }
 
@@ -41,12 +131,12 @@ body {
     }
 }
 
-.first-block {
+.firstBlock {
     position: absolute;
     width: 0%;
     height: 100vh;
-    background: #272727;
-    animation: go-left 4s cubic-bezier(.74, .06, .4, .92) forwards;
+    background: var(--color1);
+    animation: go-left 3.4s cubic-bezier(.74, .06, .4, .92) forwards;
     left: 0;
 }
 
@@ -65,13 +155,14 @@ body {
     }
 }
 
-.second-block {
+.secondBlock {
     position: absolute;
     width: 0%;
     height: 100vh;
-    background: #B08D74;
-    animation: go-left 3.2s cubic-bezier(.74, .06, .4, .92) forwards;
-    animation-delay: 3s;
+    background: var(--color9);
+    animation: go-left 3.4s cubic-bezier(.74, .06, .4, .92) forwards;
+    animation-delay: 4.2s;
+    left: 0;
 }
 
 .loader {
@@ -95,7 +186,7 @@ body {
     margin: 0 8px;
     font-size: 24px;
     text-transform: uppercase;
-    animation: loadNow 4s ease-in-out forwards;
+    animation: loadNow 3.4s ease-in-out forwards;
     opacity: 0;
     transform: translateX(0px);
 }
@@ -144,16 +235,40 @@ body {
 }
 
 .loader ul li:nth-child(7) {
-    animation-delay: 1.6s;
+    animation-delay: 1.7s;
 }
 
-.third-block {
+.loader ul li:nth-child(8) {
+    animation-delay: 1.8s;
+}
+
+.loader ul li:nth-child(9) {
+    animation-delay: 1.9s;
+}
+
+.loader ul li:nth-child(10) {
+    animation-delay: 2.0s;
+}
+
+.loader ul li:nth-child(11) {
+    animation-delay: 2.1s;
+}
+
+.loader ul li:nth-child(12) {
+    animation-delay: 2.2s;
+}
+
+.loader ul li:nth-child(13) {
+    animation-delay: 2.3s;
+}
+
+.thirdBlock {
     position: absolute;
     width: 0%;
     height: 100vh;
     background: #F0F0F0;
-    animation: expandNow 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 6.2s;
+    animation: expandNow 3.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 4.2s;
 }
 
 @keyframes expandNow {
@@ -231,7 +346,7 @@ button {
 img {
     opacity: 0;
     animation: appearimg 0.1s linear forwards;
-    animation-delay: 6.4s;
+    animation-delay: 4.2s;
 }
 
 .img:after {
@@ -242,8 +357,8 @@ img {
     height: 100%;
     background: #272727;
     position: absolute;
-    animation: rev-img 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    animation-delay: 6s;
+    animation: rev-img 3.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 4.2s;
 }
 
 @keyframes rev-img {
