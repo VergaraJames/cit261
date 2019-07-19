@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"></script>
+    -->
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <title>JAMES VERGARA Projects | https://vergarajames.github.io/cit261/ </title>
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <a href="https://vergarajames.github.io/cit261/">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="http://www.byui.edu/" target="_blank">BYU-I</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <!-- Boxes Section 1 -->
+        <section class="boxes">
+
+            <div class="display"></div>
+            <div class="display1"></div>
+            <div class="display2"></div>
+            <div class="loader">
+                <ul>
+                    <li>W</li>
+                    <li>E</li>
+                    <li>A</li>
+                    <li>T</li>
+                    <li>H</li>
+                    <li>E</li>
+                    <li>R</li>
+                </ul>
+            </div>
+
+            <!-- Box 1 -->
+            <div class="box">
+                <div id="searchContainer">
+                    <h2>Weather WEB SITE</h2>
+                    <p> <span class="bold_Text"> Instructions: </span>To get the information about the weather, please write the name of the City or Zip Number. (Examples:) New York, 10001, Lima, Dubai, Portland, 90210.</p>
+                    <input class="searchControl" type="text" placeholder="City Name or Zipcode" id="searchInput">
+                    <button class="searchControl" id="searchBtn">Search</button>
+                </div>
+            </div>
+
+            <!-- Box 2 -->
+            <div class="box1">
+                <div id="weatherContainer">
+                    <div id="weatherDescription">
+                        <h1 id="cityHeader"></h1>
+                        <div id="weatherMain">
+                            <div id="temperature"></div>
+                            <div id="weatherDescriptionHeader"></div>
+                            <div><img id="documentIconImg"></div>
+                        </div>
+                        <hr>
+                        <div id="windSpeed" class="bottom-details"></div>
+                        <div id="humidity" class="bottom-details"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="info">
+            <!-- to show media Icons -->
+            <div class="media">
+                <ul>
+                    <li>
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </li>
+                    <li>
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </li>
+                    <li>
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <!-- to show the information stored in Local Storage -->
+            <div id="userOutput"></div>
+
+
+        </section>
+
+
+    </div>
+
+
+    <script src="styles/script.js"></script>
+    <script type="text/javascript">
+        TweenMax.staggerFrom(".media ul li", 2, {
+            delay: 7,
+            opacity: 0,
+            y: 40,
+            ease: Expo.easeInOut
+        }, 0.2);
+    </script>
+    <!-- Footer -->
+    <footer>
+        <p>James Vergara R. &copy; 2019</p>
+    </footer>
+
+</body>
+
+</html>
