@@ -303,7 +303,7 @@ hr {
     font-family: Poppins;
     font-weight: bolder;
     margin: 0 8px;
-    font-size: 24px;
+    font-size: 72px;
     text-transform: uppercase;
     animation: loadNow 4s ease-in-out forwards;
     opacity: 0;
