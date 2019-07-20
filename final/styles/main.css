@@ -219,9 +219,9 @@ hr {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: greenyellow url("img/weather-raining.gif") no-repeat fixed center;
+    background: greenyellow url("final/img/weather-huracain.gif") no-repeat fixed center;
     /*
-    background-image: url("weather-raining.gif");
+    background-image: url("weather-huracain.gif");
     */
     background-size: cover;
     animation: fadeOut 5s linear forwards;
@@ -253,7 +253,7 @@ hr {
     position: absolute;
     width: 0%;
     height: 100vh;
-    background: orange url("img/weather1.jpg") no-repeat fixed center;
+    background: orange url("final/img/weather1.jpg") no-repeat fixed center;
     /* background: #272727; */
     animation: go-left 4s cubic-bezier(.74, .06, .4, .92) forwards;
     left: 0;
@@ -278,7 +278,7 @@ hr {
     position: absolute;
     width: 0%;
     height: 100vh;
-    background: #3E689D url("img/weather4.jpg") no-repeat fixed center;
+    background: #3E689D url("final/img/weather4.jpg") no-repeat fixed center;
     /* background: #B08D74; */
     animation: go-left 3.2s cubic-bezier(.74, .06, .4, .92) forwards;
     animation-delay: 3s;

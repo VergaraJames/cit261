@@ -43,34 +43,34 @@ function organizeInfo(resultFromServer) {
     /* ` selecting the bacground picture depending the weather information */
     switch (resultFromServer.weather[0].main) {
         case "Clear":
-            document.body.style.backgroundImage = 'url("img/clear.jpeg")';
+            document.body.style.backgroundImage = 'url("final/img/clear.jpeg")';
             break;
 
         case "Clouds":
-            document.body.style.backgroundImage = 'url("img/cloudy.jpeg")';
+            document.body.style.backgroundImage = 'url("final/img/cloudy.jpeg")';
             break;
 
         case "Rain":
-            document.body.style.backgroundImage = 'url("img/rain1.jpeg")';
+            document.body.style.backgroundImage = 'url("final/img/rain1.jpeg")';
             break;
 
         case "Drizzle":
-            document.body.style.backgroundImage = 'url("img/rain2.jpg")';
+            document.body.style.backgroundImage = 'url("final/img/rain2.jpg")';
             break;
 
         case "Mist":
-            document.body.style.backgroundImage = 'url("img/clear.jpeg")';
+            document.body.style.backgroundImage = 'url("final/img/clear.jpeg")';
             break;
 
         case "Thurderstorm":
-            document.body.style.backgroundImage = 'url("img/storm.jpeg")';
+            document.body.style.backgroundImage = 'url("final/img/storm.jpeg")';
             break;
 
         case "Snow":
-            document.body.style.backgroundImage = 'url("img/snow.jpeg")';
+            document.body.style.backgroundImage = 'url("final/img/snow.jpeg")';
             break;
         case "Haze":
-            document.body.style.backgroundImage = 'url("img/haze.jpg")';
+            document.body.style.backgroundImage = 'url("final/img/haze.jpg")';
             break;
 
         default:
