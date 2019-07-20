@@ -1,10 +1,15 @@
 // Variables
 let appId = 'f7ee9df4b712457a78edab4465753b2a';
-let units = 'metric';
+let units = 'imperial';
 let searchMethod;
+
+/* GET information in localStorage */
+let searchInput = localStorage.getItem("cityLocalStorage");
+document.getElementById("userOutput").innerHTML = "<b>Information in Local Storage:</b> " + searchInput;
 
 /* ` Reading the information from Search boton */
 document.getElementById('searchBtn').addEventListener('click', () => {
+
     let searchTerm = document.getElementById("searchInput").value;
     if (searchTerm)
         searchWeather(searchTerm);
@@ -24,13 +29,18 @@ function searchWeather(searchTerm) {
     getSearchMethod(searchTerm);
     const url = `http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`;
     const api = new XMLHttpRequest();
+
+    /* SET information in localStorage */
+    const cityLocalStorage = searchTerm;
+    localStorage.setItem("cityLocalStorage", cityLocalStorage);
+
     api.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             /* Console test  */
             /* console.log(this.responseText); */
             /* convert the information to JSON */
             let result = JSON.parse(this.responseText);
-            console.log(result);
+            /* console.log(result); */
             organizeInfo(result);
         }
     };
@@ -39,7 +49,6 @@ function searchWeather(searchTerm) {
 }
 /* Organizing the information  */
 function organizeInfo(resultFromServer) {
-
     /* ` selecting the bacground picture depending the weather information */
     switch (resultFromServer.weather[0].main) {
         case "Clear":
@@ -81,8 +90,8 @@ function organizeInfo(resultFromServer) {
     let humidityElement = document.getElementById("humidity");
     let windSpeedElement = document.getElementById("windSpeed");
     let cityHeader = document.getElementById("cityHeader");
-    let countryHeader = document.getElementById("countryHeader");
     let weatherIcon = document.getElementById("documentIconImg");
+
     /* information about the Icon weather https://openweathermap.org/img/w/ */
     weatherIcon.src = "https://openweathermap.org/img/w/" + resultFromServer.weather[0].icon + ".png";
     let resultDescription = resultFromServer.weather[0].description;
@@ -92,16 +101,11 @@ function organizeInfo(resultFromServer) {
     temperatureElement.innerHTML = Math.floor(resultFromServer.main.temp) + "&#176";
     windSpeedElement.innerHTML = "Winds at " + Math.floor(resultFromServer.wind.speed) + "m/s";
     cityHeader.innerHTML = resultFromServer.name;
-    countryHeader.innerHTML = resultFromServer.sys.country;
     humidityElement.innerHTML = "Humidity levels at " + resultFromServer.main.humidity + "%";
-    /* SET information in localStorage */
-    localStorage.setItem("cityLSG", resultFromServer.name);
-    localStorage.setItem("countryLSG", resultFromServer.sys.country);
     /* Calling the function to put the information into the container */
 
     setPositionForWeatherInfo();
 }
-
 /* Insert information into HTML */
 function setPositionForWeatherInfo() {
     let weatherContainer = document.getElementById("weatherContainer");
@@ -111,49 +115,5 @@ function setPositionForWeatherInfo() {
     weatherContainer.style.left = `calc(50% - ${weatherContainerWidth/2}px)`;
     weatherContainer.style.top = `calc(65% - ${weatherContainerHeight/1.3}px)`;
     weatherContainer.style.visibility = "visible";
-    localSTG();
-}
-
-/* Insert information into HTML Local Storage */
-function localSTG() {
-    /*
-        let cityLocal = document.getElementById("cityLocal");
-        let countryLocal = document.getElementById("countryLocal");
-        /* GET information in localStorage */
-
-    var cityL = localStorage.getItem("cityLSG");
-    var countryL = localStorage.getItem("countryLSG");
-
-    document.getElementById("cityLocal").innerHTML = "<b>City : </b> " + cityL;
-    document.getElementById("countryLocal").innerHTML = "<b>Contry : </b> " + countryL;
-
-
-    let appId2 = "f25415a4f2bd42e085e72280f326f0f1";
-    const url2 = `https://api.weatherbit.io/v2.0/forecast/hourly?city=${cityL},${countryL}&key=${appId2}&hours=5`;
-    /*  API Site by Hours   https://www.weatherbit.io/  */
-
-    const api2 = new XMLHttpRequest();
-    api2.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            /* convert the information to JSON */
-            let result2 = JSON.parse(this.responseText);
-            console.log(result2);
-            document.getElementById("field12").innerHTML = result2.data[0].temp;
-            document.getElementById("field13").innerHTML = result2.data[0].weather.description;
-            document.getElementById("field22").innerHTML = result2.data[1].temp;
-            document.getElementById("field23").innerHTML = result2.data[1].weather.description;
-            document.getElementById("field32").innerHTML = result2.data[2].temp;
-            document.getElementById("field33").innerHTML = result2.data[2].weather.description;
-            document.getElementById("field42").innerHTML = result2.data[3].temp;
-            document.getElementById("field43").innerHTML = result2.data[3].weather.description;
-            document.getElementById("field52").innerHTML = result2.data[4].temp;
-            document.getElementById("field53").innerHTML = result2.data[4].weather.description;
-            document.getElementById("date").innerHTML = "<b>Local Time: </b> " + result2.data[0].timestamp_local;
-            document.getElementById("time").innerHTML = "<b>Time UTC: </b> " + result2.data[0].timestamp_utc;
-            result2.data[0].timestamp_local;
-        }
-    };
-    api2.open("GET", url2, true);
-    api2.send();
 
 }
