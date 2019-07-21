@@ -22,7 +22,7 @@ function getSearchMethod(searchTerm) {
 /* from w3school.com https://www.w3schools.com/xml/xml_http.asp */
 function searchWeather(searchTerm) {
     getSearchMethod(searchTerm);
-    const url = `http://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`;
     const api = new XMLHttpRequest();
     api.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
