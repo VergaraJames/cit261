@@ -119,8 +119,7 @@ function localSTG() {
     /*
         let cityLocal = document.getElementById("cityLocal");
         let countryLocal = document.getElementById("countryLocal");
-        /* GET information in localStorage */
-
+    /* GET information in localStorage */
     var cityL = localStorage.getItem("cityLSG");
     var countryL = localStorage.getItem("countryLSG");
 
