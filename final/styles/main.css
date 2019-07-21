@@ -70,11 +70,41 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+
+/*
 .box {
     background: var(--primary);
     text-align: center;
     padding: 1.5rem 2rem;
     box-shadow: var(--shadow);
+}
+*/
+
+.box {
+    background: var(--primary);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+    animation: display 3s;
+    animation-delay: 4.9s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 0;
+}
+
+@keyframes display {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes display {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .box1 {
